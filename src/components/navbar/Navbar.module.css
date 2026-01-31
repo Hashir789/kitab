@@ -1,0 +1,253 @@
+.header {
+    top: 20px;
+    z-index: 100;
+    position: sticky;
+}
+
+.nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding-top: 10px;
+    align-items: flex-start;
+    background-color: #f8f9fa;
+}
+
+.navLeft {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navCenter {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+}
+
+.navRight {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logoContainer {
+    background: #f8f9fa;
+}
+
+.logo {
+    width: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.srOnly {
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+}
+
+.navList {
+    width: 448px;
+    height: 47px;
+    margin: 0 auto;
+    list-style: none;
+    position: relative;
+    border-radius: 10px;
+    background: rgb(240, 240, 240);
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.navList::after {
+    top: 5px;
+    z-index: 0;
+    content: "";
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    border-radius: 5px;
+    left: var(--active-left);
+    transition: left 0.4s ease-in-out;
+    background-color: rgb(100, 100, 100);
+}
+
+.navItem {
+    top: 5px;
+    z-index: 1;
+    position: absolute;
+}
+
+.navItem a {
+    height: 35px;
+    width: 100px;
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    color: rgb(90, 90, 90);
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.navItem a:hover {
+    color: rgb(60, 60, 60);
+    background-color: rgb(225, 225, 225);
+}
+
+.navItemActive a {
+    font-weight: 600;
+    color: rgb(245, 245, 245);
+}
+
+.navItemActive a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(80, 80, 80);
+}
+
+.navItem a:focus-visible,
+.navItemActive a:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid rgb(100, 100, 100);
+}
+
+.navItem1 {
+    left: 5px;
+}
+
+.navItem2 {
+    left: 117px;
+}
+
+.navItem3 {
+    left: 229px;
+}
+
+.navItem4 {
+    left: 341px;
+}
+
+.navItem1::after,
+.navItem2::after,
+.navItem3::after {
+    top: 7px;
+    width: 2px;
+    right: -7px;
+    content: "";
+    height: 21px;
+    position: absolute;
+    background-color: rgb(200, 200, 200);
+}
+
+.waitlist {
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.waitlistRow {
+    gap: 5px;
+    padding: 5px;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    background: rgb(240, 240, 240);
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.waitlistHelper {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.3;
+    margin-left: 10px;
+    color: rgb(140, 140, 140);
+    font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.waitlistInput {
+    height: 35px;
+    padding: 0 1rem;
+    font-size: 16px;
+    min-width: 180px;
+    border-radius: 5px;
+    color: rgb(90, 90, 90);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(230, 230, 230);
+    transition: border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.2s ease;
+    font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.waitlistInput::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+.waitlistInput:hover {
+    border-color: rgb(100, 100, 100);
+    background-color: rgb(248, 248, 248);
+}
+
+.waitlistInput:focus {
+    outline: none;
+    border-color: rgb(150, 150, 150);
+    background-color: rgb(248, 248, 248);
+}
+
+.waitlistInput:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px rgb(100, 100, 100);
+}
+
+.waitlistInput:-webkit-autofill,
+.waitlistInput:-webkit-autofill:hover,
+.waitlistInput:-webkit-autofill:focus,
+.waitlistInput:-webkit-autofill:active {
+    background-color: rgb(255, 255, 255) !important;
+    -webkit-text-fill-color: rgb(90, 90, 90) !important;
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+}
+
+.waitlistButton {
+    height: 35px;
+    width: 125px;
+    border: none;
+    display: flex;
+    font-size: 16px;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    min-width: 100px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(245, 245, 245);
+    background-color: rgb(100, 100, 100);
+    transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.2s ease;
+    font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.waitlistButton:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(80, 80, 80);
+}
+
+.waitlistButton:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(60, 60, 60);
+}
+
+.waitlistButton:disabled {
+    opacity: 0.6;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='none' stroke='%23606060' stroke-width='3.5'/%3E%3Cpath d='M6 6l8 8' stroke='%23606060' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") 10 10, not-allowed;
+}

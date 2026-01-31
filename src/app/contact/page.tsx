@@ -1,0 +1,52 @@
+export default function Contact() {
+    return (
+      <div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+        <div>Hashir</div>
+      </div>
+    );
+}
+  
