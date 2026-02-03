@@ -34,6 +34,39 @@
 
 .heroLeft {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroTitle {
+  font-family: "Fredoka", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  line-height: 1.15;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.heroTitle .highlight {
+  color: var(--color-text);
+}
+
+.heroSubtext {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 85%;
+}
+
+.heroSubtext .brandName {
+  color: var(--color-text);
+  font-weight: 600;
+  font-style: italic;
 }
 
 .chartContainer {
@@ -52,6 +85,16 @@
 
   .heroLeft {
     width: 100%;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroSubtext {
+    font-size: 17px;
+    max-width: 100%;
   }
 
   .chartContainer {
@@ -70,5 +113,14 @@
   .chartContainer {
     max-width: 100%;
     width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroSubtext {
+    font-size: 16px;
+    max-width: 100%;
   }
 }

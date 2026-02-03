@@ -1,5 +1,5 @@
 .header {
-    top: 20px;
+    top: 0px;
     z-index: 100;
     position: sticky;
 }
@@ -8,7 +8,7 @@
     width: 100%;
     height: 80px;
     display: flex;
-    padding-top: 10px;
+    padding-top: 30px;
     align-items: flex-start;
     background-color: #f8f9fa;
 }

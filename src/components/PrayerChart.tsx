@@ -104,6 +104,15 @@ export default function PrayerChart() {
             borderRadius: 10,
             borderWidth: 3,
             borderColor: '#f8f9fa',
+            dataLabels: {
+              enabled: true,
+              color: '#3c3c3c',
+              style: {
+                fontFamily: '"Google Sans Flex", system-ui, sans-serif',
+                fontSize: '12px',
+                fontWeight: '700'
+              }
+            },
             data: monthlyNamazData.map(item => ({
               name: item.name,
               y: item.value,
