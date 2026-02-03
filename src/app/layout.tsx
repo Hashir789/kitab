@@ -263,15 +263,10 @@ export default function RootLayout({
         <Script 
           src="https://code.highcharts.com/highcharts.js" 
           strategy="afterInteractive"
-          onLoad={() => {
-            // Load variable-pie module after Highcharts core is loaded
-            if (typeof window !== 'undefined' && window.Highcharts) {
-              const script = document.createElement('script');
-              script.src = 'https://code.highcharts.com/modules/variable-pie.js';
-              script.async = true;
-              document.head.appendChild(script);
-            }
-          }}
+        />
+        <Script 
+          src="https://code.highcharts.com/modules/variable-pie.js" 
+          strategy="lazyOnload"
         />
         <Navbar />
         <main className="container">{children}</main>

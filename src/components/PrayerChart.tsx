@@ -20,29 +20,63 @@ export default function PrayerChart() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Wait for Highcharts and variable-pie module to be available
-    const checkHighcharts = () => {
-      if (window.Highcharts && chartContainerRef.current) {
-        // Check if variablepie type is available (module loaded)
-        if (!window.Highcharts.seriesTypes || !window.Highcharts.seriesTypes.variablepie) {
-          // Retry after a short delay if module not loaded yet
-          setTimeout(checkHighcharts, 100);
+    // Load variable-pie module if not already loaded
+    const loadVariablePieModule = () => {
+      return new Promise<void>((resolve) => {
+        if (window.Highcharts?.seriesTypes?.variablepie) {
+          resolve();
           return;
         }
-        
-        setIsLoaded(true);
-        
-        // Destroy existing chart if it exists
-        if (chartContainerRef.current && window.Highcharts.charts) {
-          const existingChart = window.Highcharts.charts.find(
-            (chart: any) => chart && chart.renderTo === chartContainerRef.current
-          );
-          if (existingChart) {
-            existingChart.destroy();
-          }
+
+        // Check if script already exists
+        const existingScript = document.querySelector('script[src*="variable-pie.js"]');
+        if (existingScript) {
+          // Wait for it to load
+          existingScript.addEventListener('load', () => resolve());
+          existingScript.addEventListener('error', () => resolve()); // Continue even if fails
+          return;
         }
 
-        window.Highcharts.chart(chartContainerRef.current, {
+        // Create and load the script
+        const script = document.createElement('script');
+        script.src = 'https://code.highcharts.com/modules/variable-pie.js';
+        script.async = true;
+        script.onload = () => resolve();
+        script.onerror = () => resolve(); // Continue even if fails
+        document.head.appendChild(script);
+      });
+    };
+
+    // Wait for Highcharts and variable-pie module to be available
+    const checkHighcharts = async () => {
+      if (!window.Highcharts || !chartContainerRef.current) {
+        setTimeout(checkHighcharts, 100);
+        return;
+      }
+
+      // Load variable-pie module if needed
+      await loadVariablePieModule();
+
+      // Check if variablepie type is available (module loaded)
+      if (!window.Highcharts.seriesTypes?.variablepie) {
+        // Retry after a short delay if module not loaded yet
+        setTimeout(checkHighcharts, 100);
+        return;
+      }
+      
+      setIsLoaded(true);
+      
+      // Destroy existing chart if it exists
+      if (chartContainerRef.current && window.Highcharts.charts) {
+        const existingChart = window.Highcharts.charts.find(
+          (chart: any) => chart && chart.renderTo === chartContainerRef.current
+        );
+        if (existingChart) {
+          existingChart.destroy();
+        }
+      }
+
+      window.Highcharts.chart(chartContainerRef.current, {
           chart: {
             type: 'variablepie',
             backgroundColor: 'transparent'
@@ -83,10 +117,6 @@ export default function PrayerChart() {
             ]
           }]
         });
-      } else {
-        // Retry after a short delay
-        setTimeout(checkHighcharts, 100);
-      }
     };
 
     checkHighcharts();
