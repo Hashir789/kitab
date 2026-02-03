@@ -20,9 +20,16 @@ export default function PrayerChart() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Wait for Highcharts to be available
+    // Wait for Highcharts and variable-pie module to be available
     const checkHighcharts = () => {
       if (window.Highcharts && chartContainerRef.current) {
+        // Check if variablepie type is available (module loaded)
+        if (!window.Highcharts.seriesTypes || !window.Highcharts.seriesTypes.variablepie) {
+          // Retry after a short delay if module not loaded yet
+          setTimeout(checkHighcharts, 100);
+          return;
+        }
+        
         setIsLoaded(true);
         
         // Destroy existing chart if it exists
