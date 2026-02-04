@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./Navbar.module.css";
 import NavLinksClient from "./NavLinksClient";
 import WaitlistForm from "./WaitlistForm";
-import Tooltip from "./tooltip/Tooltip";
+import Tooltip from "../tooltip/Tooltip";
 
 export default function Navbar() {
   const navItems = [

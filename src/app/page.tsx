@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import PrayerChart from "@/components/PrayerChart";
+import PrayerChart from "@/components/prayerchart/PrayerChart";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
           Be Your Own <span className={styles.highlight}>Accountant</span>
         </h1>
         <p className={styles.heroSubtext}>
-          Track your good and bad deeds, reflect, grow, and improve every day — with <strong className={styles.brandName}>Kitaab</strong>.
+          Track your deeds, reflect, grow, and improve every day — with <strong className={styles.brandName}>Kitaab</strong>.
         </p>
       </div>
       <div className={styles.chartContainer}>

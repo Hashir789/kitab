@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./Navbar.module.css";
-import Toast from "./toast/Toast";
+import Toast from "../toast/Toast";
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
