@@ -1,20 +1,17 @@
 import styles from "./page.module.css";
-import PrayerChart from "@/components/prayerchart/PrayerChart";
+import Hero from "@/components/herotext/HeroText";
+import PrayerChartClient from "@/components/prayerchart/PrayerChartClient";
 
 export default function Home() {
   return (
-    <header className={styles.hero}>
-      <div className={styles.heroLeft}>
-        <h1 className={styles.heroTitle}>
-          Be Your Own <span className={styles.highlight}>Accountant</span>
+    <main>
+      <header className={styles.hero} role="banner">
+        <h1 className={styles.visuallyHidden}>
+          Track your good and bad deeds with an Islamic prayer tracker
         </h1>
-        <p className={styles.heroSubtext}>
-          Track your deeds, reflect, grow, and improve every day — with <strong className={styles.brandName}>Kitaab</strong>.
-        </p>
-      </div>
-      <div className={styles.chartContainer}>
-        <PrayerChart />
-      </div>
-    </header>
+        <Hero />
+        <PrayerChartClient />
+      </header>
+    </main>
   );
 }

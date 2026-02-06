@@ -1,0 +1,236 @@
+.chartContainer {
+    flex: 1;
+    width: 100%;
+}
+
+.progressBarContainer {
+    width: 100%;
+    height: 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: rgb(100, 100, 100);
+    border-radius: 10px;
+}
+  
+.chartContainerFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.groupButtonContainerBeta {
+    height: 43px;
+    border-radius: 10px;
+    border: 1px solid rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.groupButtonDropdown {
+    border: none;
+    height: 31px;
+    width: 110px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    margin-left: 12px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 600;
+    position: relative;
+    padding: 0 10px;
+    gap: 6px;
+}
+
+.dropdownLabel {
+    flex: 1;
+    text-align: left;
+}
+
+.dropdownCaret {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+}
+
+.dropdownCaretOpen {
+    transform: rotate(180deg);
+}
+
+.groupButtonDropdownOpen {
+    background-color: rgb(100, 100, 100);
+    color: rgb(245, 245, 245);
+}
+
+.dropdownWrapper {
+    position: relative;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    margin: 0;
+    padding: 5px;
+    min-width: 110px;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgb(230, 230, 230);
+    list-style: none;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dropdownMenuItem {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 600;
+    height: 31px;
+    border-radius: 5px;
+}
+
+.dropdownMenuItem:hover {
+    color: rgb(60, 60, 60);
+    background-color: rgb(225, 225, 225);
+}
+
+.groupButtonBeta {
+    border: none;
+    height: 31px;
+    width: 90px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+}
+
+.groupButtonBeta::after {
+    top: 6px;
+    width: 2px;
+    right: -7px;
+    content: "";
+    height: 19px;
+    position: absolute;
+    background-color: rgb(200, 200, 200);
+}
+
+.groupButtonContainer {
+    width: 205px;
+    height: 43px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
+}
+  
+.groupButton {
+    border: none;
+    height: 31px;
+    width: 90px;
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: transparent;
+    color: rgb(100, 100, 100);
+    font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+  
+.groupButton1 {
+    left: 5px;
+}
+  
+.groupButton2 {
+    left: 108px;
+}
+  
+.groupButton1::after {
+    top: 6px;
+    width: 2px;
+    right: -7px;
+    content: "";
+    height: 19px;
+    position: absolute;
+    background-color: rgb(200, 200, 200);
+}
+  
+.groupButton:hover {
+    color: rgb(60, 60, 60);
+    background-color: rgb(225, 225, 225);
+}
+  
+.groupButtonActive {
+    font-weight: 600;
+    color: rgb(245, 245, 245);
+}
+  
+.groupButtonActive:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(80, 80, 80);
+}
+  
+.groupButton:focus-visible,
+.groupButtonActive:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid rgb(100, 100, 100);
+}
+  
+.groupButtonContainer::after {
+    top: 5px;
+    z-index: 0;
+    content: "";
+    width: 90px;
+    height: 31px;
+    position: absolute;
+    border-radius: 5px;
+    left: var(--active-left);
+    transition: left 0.4s ease-in-out;
+    background-color: rgb(100, 100, 100);
+}
+  
+@media (max-width: 768px) {
+    .chartContainer {
+      max-width: 100%;
+      width: 100%;
+    }
+}
+  
+@media (max-width: 480px) {
+    .chartContainer {
+      max-width: 100%;
+      width: 100%;
+    }
+}
+  

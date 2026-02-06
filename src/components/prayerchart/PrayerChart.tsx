@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import monthlyPrayer from "@/monthlyPrayer.json";
 
 declare global {
   interface Window {
@@ -8,14 +9,57 @@ declare global {
   }
 }
 
-const monthlyNamazData = [
-  { name: "Prayed On Time", value: 55 },
-  { name: "Prayed In Time", value: 40 },
-  { name: "Prayed Late", value: 65 },
-  { name: "Never Prayed", value: 39 }
+type PrayerStatus = "Prayed On Time" | "Prayed In Time" | "Prayed Late" | "Never Prayed";
+type PrayerName = "All" | "Fajar" | "Zuhr" | "Asr" | "Maghrib" | "Isha";
+type RawPrayerStatus = "prayed on time" | "prayed in time" | "prayed late" | "never prayed";
+
+const statusOrder: PrayerStatus[] = [
+  "Prayed On Time",
+  "Prayed In Time",
+  "Prayed Late",
+  "Never Prayed",
 ];
 
-export default function PrayerChart() {
+function getMonthlyNamazData(selectedPrayer: PrayerName) {
+  const statusCounts: Record<PrayerStatus, number> = {
+    "Prayed On Time": 0,
+    "Prayed In Time": 0,
+    "Prayed Late": 0,
+    "Never Prayed": 0,
+  };
+
+  const statusMap: Record<RawPrayerStatus, PrayerStatus> = {
+    "prayed on time": "Prayed On Time",
+    "prayed in time": "Prayed In Time",
+    "prayed late": "Prayed Late",
+    "never prayed": "Never Prayed",
+  };
+
+  monthlyPrayer.days.forEach((day: any) => {
+    const prayers = day.prayers as Record<string, RawPrayerStatus>;
+
+    const values =
+      selectedPrayer === "All"
+        ? Object.values(prayers)
+        : [prayers[selectedPrayer]];
+
+    values.forEach((prayer) => {
+      if (!prayer) return;
+
+      const mappedStatus = statusMap[prayer];
+      if (!mappedStatus) return;
+
+      statusCounts[mappedStatus] += 1;
+    });
+  });
+
+  return statusOrder.map((name) => ({
+    name,
+    value: statusCounts[name],
+  }));
+}
+
+export default function PrayerChart({ selectedPrayer = "All" }: { selectedPrayer?: PrayerName }) {
   const chartContainerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -76,10 +120,16 @@ export default function PrayerChart() {
         }
       }
 
+      const monthlyNamazData = getMonthlyNamazData(selectedPrayer);
+      // Filter out categories with 0 values
+      const filteredData = monthlyNamazData.filter(item => item.value > 0);
+
       window.Highcharts.chart(chartContainerRef.current, {
           chart: {
             type: 'variablepie',
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            width: null,
+            height: 500
           },
           credits: {
             enabled: false
@@ -98,7 +148,8 @@ export default function PrayerChart() {
           },
           series: [{
             minPointSize: 10,
-            innerSize: '30%',
+          innerSize: '30%',
+            size: '75%',
             zMin: 0,
             name: 'prayers',
             borderRadius: 10,
@@ -113,7 +164,7 @@ export default function PrayerChart() {
                 fontWeight: '700'
               }
             },
-            data: monthlyNamazData.map(item => ({
+            data: filteredData.map((item) => ({
               name: item.name,
               y: item.value,
               z: 100
@@ -123,7 +174,7 @@ export default function PrayerChart() {
               '#747474',
               '#535353',
               '#323232'
-            ]
+            ].slice(0, filteredData.length)
           }]
         });
     };
@@ -141,7 +192,7 @@ export default function PrayerChart() {
         }
       }
     };
-  }, []);
+  }, [selectedPrayer]);
 
   return <div ref={chartContainerRef} style={{ height: '500px', width: '100%' }} />;
 }
