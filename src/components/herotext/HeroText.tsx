@@ -18,6 +18,12 @@ export default function HeroText() {
         Track your deeds, reflect, grow, and improve every day — with{" "}
         <strong className={styles.brandName}>Kitaab</strong>.
       </p>
+      <div className={styles.heroButtons}>
+        <div className={styles.heroButtonContainer}>
+          <button className={styles.heroButtonFirst}>Explore Kitaab</button>
+          <button className={styles.heroButtonSecond}>Learn More</button>
+        </div>
+      </div>
     </motion.div>
   );
 }
