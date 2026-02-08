@@ -1,3 +1,28 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with Kitaab. Contact us for support, questions, or feedback about your digital record of deeds.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: "Contact | Kitaab",
+    description: "Get in touch with Kitaab. Contact us for support, questions, or feedback about your digital record of deeds.",
+    url: "https://kitaab.me/contact",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact | Kitaab",
+    description: "Get in touch with Kitaab. Contact us for support, questions, or feedback about your digital record of deeds.",
+  },
+  alternates: {
+    canonical: "https://kitaab.me/contact",
+  },
+};
+
 export default function Contact() {
     return (
       <div style={{ 

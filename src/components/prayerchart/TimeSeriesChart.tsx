@@ -78,7 +78,6 @@ export default function TimeSeriesChart() {
         // Find the maximum value in the data
         const maxValue = Math.max(...monthlyLies.days.map((day: { day: number; lies: number }) => day.lies));
         const yAxisMax = maxValue + 2;
-        console.log('Max value:', maxValue, 'Y-axis max:', yAxisMax);
 
         // Calculate height as slightly more than half of width
         const containerWidth = chartContainerRef.current.offsetWidth;

@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api', '/about', '/features', '/contact'],
+      disallow: ['/api', '/features', '/about', '/contact'],
     },
     sitemap: 'https://kitaab.me/sitemap.xml',
   };

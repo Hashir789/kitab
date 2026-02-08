@@ -1,7 +1,7 @@
-import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import Navbar from "@/components/navbar/Navbar";
+import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kitaab.me"),
@@ -41,7 +41,9 @@ export const metadata: Metadata = {
   creator: "Kitaab",
   publisher: "Kitaab",
   applicationName: "Kitaab",
+  generator: "Next.js",
   referrer: "origin-when-cross-origin",
+  classification: "Lifestyle Application",
   formatDetection: {
     telephone: false,
   },
@@ -67,6 +69,7 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Kitaab - Be Your Own Accountant",
         type: "image/png",
+        secureUrl: "https://kitaab.me/og-image.png",
       },
     ],
   },
@@ -75,17 +78,50 @@ export const metadata: Metadata = {
     title: "Kitaab - Be Your Own Accountant",
     description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
     images: ["https://kitaab.me/og-image.png"],
+    creator: "@kitaab", // Update with actual Twitter handle if available
+    site: "@kitaab", // Update with actual Twitter handle if available
   },
   alternates: {
     canonical: "https://kitaab.me",
+    languages: {
+      "en-US": "https://kitaab.me",
+    },
+  },
+  manifest: "/manifest.json",
+  verification: {
+    // Add when you have verification codes
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+    // yahoo: "your-yahoo-verification-code",
+  },
+  category: "Lifestyle",
+  appLinks: {
+    web: {
+      url: "https://kitaab.me",
+      should_fallback: false,
+    },
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Kitaab",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: [
+      { url: "/favicon.ico" },
     ],
   },
 };
@@ -231,9 +267,27 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Kitaab",
+  url: "https://kitaab.me",
+  description: "Kitaab - Your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://kitaab.me/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode; }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <body>
@@ -256,6 +310,11 @@ export default function RootLayout({
           id="json-ld-breadcrumb"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+        <Script
+          id="json-ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
         <Script 
           src="https://code.highcharts.com/highcharts.js" 
