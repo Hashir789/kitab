@@ -253,8 +253,8 @@ export default function TimeSeriesChart() {
               fontWeight: '600'
             },
             pointFormatter: function(this: any) {
-              return '<span style="color:#535353">\u25CF</span> <b>Number of False Speakings</b><br/>' +
-                'Value: <b>' + this.y + '</b><br/>';
+              return '<span style="color:#535353">\u25CF</span> <b>False Speakings</b><br/>' +
+                'Count: <b>' + this.y + '</b><br/>';
             }
           },
           plotOptions: {
@@ -264,7 +264,7 @@ export default function TimeSeriesChart() {
               },
               marker: {
                 enabled: false,
-                lineColor: '#535353',
+                lineColor: '#434343',
                 fillColor: '#535353',
                 states: {
                   hover: {

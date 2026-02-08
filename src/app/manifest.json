@@ -1,11 +1,11 @@
 {
-  "name": "Kitaab — Your Digital Kitaab of Deeds",
+  "name": "Kitaab - Be Your Own Accountant",
   "short_name": "Kitaab",
-  "description": "Track your daily actions, reflect on your life, and grow through mindful accountability.",
+  "description": "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FAFAF8",
-  "theme_color": "#FAFAF8",
+  "background_color": "#f8f9fa",
+  "theme_color": "#f8f9fa",
   "icons": [
     {
       "src": "/icon-16x16.png",

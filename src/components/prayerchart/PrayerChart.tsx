@@ -167,7 +167,7 @@ export default function PrayerChart({ selectedPrayer = "All" }: { selectedPrayer
               return '<span style="color:' + this.color + '">\u25CF</span> <b>' + 
                 this.name + '</b><br/>' +
                 'Count: <b>' + this.y + '</b><br/>' +
-                'Percentage: <b>' + percentage + '%</b><br/>';
+                'Percentage(%): <b>' + percentage + '</b><br/>';
             }
           },
           series: [{

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import styles from "@/app/page.module.css";
 
 export default function HeroText() {
@@ -20,8 +21,12 @@ export default function HeroText() {
       </p>
       <div className={styles.heroButtons}>
         <div className={styles.heroButtonContainer}>
-          <button className={styles.heroButtonFirst}>Explore Kitaab</button>
-          <button className={styles.heroButtonSecond}>Learn More</button>
+          <button className={styles.heroButtonFirst} aria-label="Explore Kitaab features">
+            Explore Kitaab
+          </button>
+          <Link href="/contact" className={styles.heroButtonSecond} aria-label="Learn more about Kitaab">
+            Learn More
+          </Link>
         </div>
       </div>
     </motion.div>

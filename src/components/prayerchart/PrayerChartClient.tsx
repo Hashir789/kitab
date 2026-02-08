@@ -283,17 +283,17 @@ export default function PrayerChartClient() {
           ))}
         </div>
       </div>
-      <div className={styles.chartContainerSliderWrapper}>
+      <div className={styles.chartContainerSliderWrapper} aria-label="Prayer tracking charts">
         <div 
           className={styles.chartContainerSlider}
           style={{ 
             transform: `translateX(-${(1 - currentSlide) * 50}%)`
           }}
         >
-          <div className={`${styles.carouselSlide} ${styles.margin10}`}>
+          <div className={`${styles.carouselSlide} ${styles.margin10}`} aria-label="False speaking tracking chart">
             <TimeSeriesChart />
           </div>
-          <div className={styles.carouselSlide}>
+          <div className={styles.carouselSlide} aria-label="Prayer tracking chart">
             <PrayerChart selectedPrayer={selectedOption} />
           </div>
         </div>

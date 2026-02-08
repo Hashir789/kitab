@@ -6,10 +6,10 @@ import Navbar from "@/components/navbar/Navbar";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kitaab.me"),
   title: {
-    default: "Kitaab — Your Digital Kitaab of Deeds",
+    default: "Kitaab - Be Your Own Accountant",
     template: "%s | Kitaab",
   },
-  description: "Kitaab is your digital record of deeds. Track daily actions, build self-accountability, and grow through mindful living. Record Hasanaat (good deeds) and Sayyi'at (bad deeds), reflect on your life, monitor personal growth, and build lasting habits with our comprehensive accountability journal and habit tracking app.",
+  description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
   keywords: [
     "Kitaab",
     "daily deeds",
@@ -46,14 +46,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      index: false,
+      follow: false,
     },
   },
   openGraph: {
@@ -61,23 +58,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://kitaab.me",
     siteName: "Kitaab",
-    title: "Kitaab — Your Digital Kitaab of Deeds",
-    description: "Track your daily actions, reflect on your life, and grow through mindful accountability. Record Hasanaat and Sayyi'at, build self-accountability, and achieve personal growth with Kitaab's comprehensive deed tracking and spiritual journal app.",
+    title: "Kitaab - Be Your Own Accountant",
+    description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://kitaab.me/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Kitaab — Your Digital Kitaab of Deeds",
+        alt: "Kitaab - Be Your Own Accountant",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kitaab — Your Digital Kitaab of Deeds",
-    description: "Track your daily actions, reflect on your life, and grow through mindful accountability. Record Hasanaat and Sayyi'at, build self-accountability, and achieve personal growth with Kitaab's comprehensive deed tracking and spiritual journal app.",
-    images: ["/og-image.png"],
+    title: "Kitaab - Be Your Own Accountant",
+    description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
+    images: ["https://kitaab.me/og-image.png"],
   },
   alternates: {
     canonical: "https://kitaab.me",
@@ -97,7 +94,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#FAFAF8",
+  themeColor: "#f8f9fa",
   colorScheme: "light",
 };
 
