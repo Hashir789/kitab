@@ -123,6 +123,9 @@ export default function PrayerChart({ selectedPrayer = "All" }: { selectedPrayer
       const monthlyNamazData = getMonthlyNamazData(selectedPrayer);
       // Filter out categories with 0 values
       const filteredData = monthlyNamazData.filter(item => item.value > 0);
+      
+      // Calculate total for percentage calculation
+      const total = filteredData.reduce((sum, item) => sum + item.value, 0);
 
       window.Highcharts.chart(chartContainerRef.current, {
           chart: {
@@ -141,14 +144,35 @@ export default function PrayerChart({ selectedPrayer = "All" }: { selectedPrayer
             text: ''
           },
           tooltip: {
+            backgroundColor: 'rgb(240, 240, 240)',
+            borderColor: 'rgb(230, 230, 230)',
+            borderRadius: 10,
+            borderWidth: 1,
+            shadow: {
+              color: 'rgba(0, 0, 0, 0.12)',
+              offsetX: 0,
+              offsetY: 4,
+              opacity: 1,
+              width: 10
+            },
+            style: {
+              fontFamily: '"Google Sans Flex", system-ui, sans-serif',
+              fontSize: '14px',
+              color: 'rgb(100, 100, 100)',
+              fontWeight: '600'
+            },
             headerFormat: '',
-            pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> ' +
-              '{point.name}</b><br/>' +
-              'Count: <b>{point.y}</b><br/>'
+            pointFormatter: function(this: any) {
+              const percentage = total > 0 ? ((this.y / total) * 100).toFixed(1) : '0.0';
+              return '<span style="color:' + this.color + '">\u25CF</span> <b>' + 
+                this.name + '</b><br/>' +
+                'Count: <b>' + this.y + '</b><br/>' +
+                'Percentage: <b>' + percentage + '%</b><br/>';
+            }
           },
           series: [{
             minPointSize: 10,
-          innerSize: '30%',
+            innerSize: '30%',
             size: '75%',
             zMin: 0,
             name: 'prayers',

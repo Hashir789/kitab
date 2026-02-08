@@ -12,6 +12,23 @@ export default function Home() {
         <Hero />
         <PrayerChartClient />
       </header>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
+      <div>Hashir</div>
     </main>
   );
 }
