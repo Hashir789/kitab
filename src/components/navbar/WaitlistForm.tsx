@@ -191,7 +191,7 @@ export default function WaitlistForm() {
             type="submit"
             disabled={status === "loading" || !email || !isValidEmail(email)}
           >
-            {status === "loading" ? "Submitting..." : "Notify Me"}
+            {status === "loading" ? "Submitting..." : "Join the Waitlist"}
           </button>
         </form>
         <p className={styles.waitlistHelper} id="waitlist-helper">
