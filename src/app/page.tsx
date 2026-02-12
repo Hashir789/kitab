@@ -1,11 +1,13 @@
 import styles from "./page.module.css";
 import Hero from "@/components/herotext/HeroText";
 import PrayerChartClient from "@/components/prayerchart/PrayerChartClient";
+import WhatIsKitaabSection from "@/components/whatiskitaab/WhatIsKitaabSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Kitaab - Be Your Own Accountant",
-  description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
+  description:
+    "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
   keywords: [
     "Kitaab",
     "daily deeds",
@@ -35,7 +37,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Kitaab - Be Your Own Accountant",
-    description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
+    description:
+      "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
     url: "https://kitaab.me",
     siteName: "Kitaab",
     images: [
@@ -52,7 +55,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kitaab - Be Your Own Accountant",
-    description: "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
+    description:
+      "Kitaab is your digital record of deeds. Track daily actions, reflect on your life, and grow through self-accountability.",
     images: ["https://kitaab.me/og-image.png"],
   },
   alternates: {
@@ -67,6 +71,7 @@ export default function Home() {
         <Hero />
         <PrayerChartClient />
       </header>
+      <WhatIsKitaabSection />
     </main>
   );
 }
