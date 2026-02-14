@@ -16,8 +16,8 @@ export default function HeroText() {
         Be Your Own <span className={styles.highlight}>Accountant</span>
       </h1>
       <p className={styles.heroSubtext}>
-        Track your deeds, reflect, grow, and improve every day — with{" "}
-        <strong className={styles.brandName}>Kitaab</strong>.
+        Track your deeds, reflect, grow, and improve every day <br />
+        — with{" "}<strong className={styles.brandName}>Kitaab</strong>.
       </p>
       <div className={styles.heroButtons}>
         <div className={styles.heroButtonContainer}>

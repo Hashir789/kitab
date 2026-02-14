@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./WhatIsKitaabSection.module.css";
+import styles from "./WhatIsKitaab.module.css";
 
 export default function WhatIsKitaabSection() {
   return (
@@ -19,7 +19,7 @@ export default function WhatIsKitaabSection() {
           </span>
 
           <p className={styles.translation}>
-            Read your record. Sufficient is yourself against you this Day as
+            Read your <strong>kitaab</strong>. Sufficient is yourself against you this Day as
             accountant.
           </p>
 
@@ -28,7 +28,7 @@ export default function WhatIsKitaabSection() {
 
         <div className={styles.right}>
           <h2 id="what-is-kitaab-heading" className={styles.heading}>
-            What is Kitaab?
+            What is <span className={styles.kitaabHighlight}>Kitaab</span>
           </h2>
           <p>
             Every action we take leaves a mark, whether good or bad. Kitaab, an
