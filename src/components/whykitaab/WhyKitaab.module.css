@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "p283-v1";
-  src: url("https://verses.quran.foundation/fonts/quran/hafs/v1/woff2/p283.woff2")
+  font-family: "p234-v1";
+  src: url("https://verses.quran.foundation/fonts/quran/hafs/v1/woff2/p234.woff2")
     format("woff2");
   font-display: swap;
 }
 
 .section {
-  padding: 0 1.5rem 5rem;
+  padding: 5rem 1.5rem;
   background-color: var(--color-background-alt);
 }
 
@@ -14,12 +14,31 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
   gap: 3.5rem;
   align-items: stretch;
 }
 
 .left {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  padding: 1.25rem 0;
+}
+
+.left p {
+  margin: 0 0 0 0;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.left p:last-child {
+  margin-bottom: 0;
+}
+
+.right {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +53,7 @@
   position: relative;
 }
 
-.left:hover {
+.right:hover {
   box-shadow: var(--shadow-lg);
 }
 
@@ -50,6 +69,10 @@
   position: relative;
   display: inline-block;
   padding-bottom: 0.75rem;
+}
+
+.heading:not(:first-child) {
+  margin-top: 2rem;
 }
 
 .heading::after {
@@ -68,6 +91,19 @@
   font-weight: 700;
 }
 
+.subheading {
+  font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.75rem 0;
+}
+
+.subheading:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
 .ayahReference {
   font-size: 14px;
   text-transform: uppercase;
@@ -84,7 +120,7 @@
 
 .ayahWords {
   display: block;
-  font-family: "p283-v1", system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: "p234-v1", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: clamp(2.3rem, 3.3vw, 2.9rem);
   line-height: 1.6;
@@ -108,25 +144,6 @@
   max-width: 34rem;
 }
 
-.right {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  padding: 1.25rem 0;
-}
-
-.right p {
-  margin: 0 0 1.5rem 0;
-  text-align: justify;
-  font-size: 16px;
-}
-
-.right p:last-child {
-  margin-bottom: 0;
-}
-
 @media (max-width: 900px) {
   .section {
     padding: 4rem 1.5rem;
@@ -138,7 +155,7 @@
     align-items: flex-start;
   }
 
-  .left {
+  .right {
     padding: 2rem;
   }
 
@@ -163,7 +180,7 @@
     padding-bottom: 0.5rem;
   }
 
-  .left {
+  .right {
     padding: 1.5rem;
     border-radius: 12px;
   }
@@ -173,8 +190,7 @@
     margin: 0;
   }
 
-  .right {
+  .left {
     font-size: 1rem;
   }
 }
-

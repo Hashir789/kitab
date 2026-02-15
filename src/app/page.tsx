@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import Hero from "@/components/herotext/HeroText";
 import PrayerChartClient from "@/components/prayerchart/PrayerChartClient";
 import WhatIsKitaab from "@/components/whatiskitaab/WhatIsKitaab";
+import WhyKitaab from "@/components/whykitaab/WhyKitaab";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -72,6 +73,7 @@ export default function Home() {
         <PrayerChartClient />
       </header>
       <WhatIsKitaab />
+      <WhyKitaab />
     </main>
   );
 }

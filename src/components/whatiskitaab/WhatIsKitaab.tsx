@@ -15,12 +15,11 @@ export default function WhatIsKitaabSection() {
             data-font-scale="3"
             data-font="p283-v1"
           >
-            ﮭ ﮮ ﮯ ﮰ ﮱ ﯓ ﯔ ﯕ
+            ﮭ ﮮ ﮯ ﮰ ﮱ ﯓ ﯔ
           </span>
 
           <p className={styles.translation}>
-            Read your <strong>kitaab</strong>. Sufficient is yourself against you this Day as
-            accountant.
+            Read your <strong>kitaab</strong>. You yourself are sufficient as your accountant today.
           </p>
 
           <p className={styles.ayahReference}>Al Qur'an 17:14</p>
@@ -31,18 +30,10 @@ export default function WhatIsKitaabSection() {
             What is <span className={styles.kitaabHighlight}>Kitaab</span>
           </h2>
           <p>
-            Every action we take leaves a mark, whether good or bad. Kitaab, an
-            Islamic app, helps you capture your daily good deeds Hasanaat and
-            bad deeds Sayyi&apos;at in one simple, meaningful record. By
-            tracking your deeds, you gain insight into your choices and growth,
-            turning everyday actions into visible progress.
+            Every action we take leaves a mark, whether good or bad. Kitaab is a personal Islamic app that helps you record your daily good and bad deeds in one meaningful place. By making your actions visible, it helps you reflect on your choices and see your growth more clearly.
           </p>
           <p>
-            But Kitaab is more than just recording deeds. It gives purpose to
-            your routine, helping you reflect, improve, and grow spiritually and
-            morally. With Kitaab, you don&apos;t just track your day, you
-            understand why it matters and how small actions shape the bigger
-            story of your life.
+            But Kitaab is more than a record. It brings intention to your routine, helping you pause, improve, and grow spiritually and morally. Because small actions, repeated daily, shape who you become.
           </p>
         </div>
       </div>

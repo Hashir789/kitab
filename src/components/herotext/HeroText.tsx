@@ -21,9 +21,9 @@ export default function HeroText() {
       </p>
       <div className={styles.heroButtons}>
         <div className={styles.heroButtonContainer}>
-          <button className={styles.heroButtonFirst} aria-label="Explore Kitaab features">
+          <Link href="/features" className={styles.heroButtonFirst} aria-label="Explore Kitaab features">
             Explore Kitaab
-          </button>
+          </Link>
           <Link href="/contact" className={styles.heroButtonSecond} aria-label="Learn more about Kitaab">
             Learn More
           </Link>
