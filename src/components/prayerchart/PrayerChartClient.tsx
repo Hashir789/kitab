@@ -186,10 +186,20 @@ export default function PrayerChartClient() {
         isPausedRef.current = false;
       }}
     >
-      <div className={styles.progressBarContainer}>
-        <div 
-          className={styles.progressBar} 
-          style={{ width: `${progress}%` }}
+      <div className={styles.progressDotsContainer}>
+        <button
+          type="button"
+          onClick={() => handleSlideClick(0)}
+          className={`${styles.progressDot} ${currentSlide === 0 ? styles.progressDotActive : ''}`}
+          aria-label="View Hasanaat"
+          aria-pressed={currentSlide === 0}
+        />
+        <button
+          type="button"
+          onClick={() => handleSlideClick(1)}
+          className={`${styles.progressDot} ${currentSlide === 1 ? styles.progressDotActive : ''}`}
+          aria-label="View Sayyiaat"
+          aria-pressed={currentSlide === 1}
         />
       </div>
       <div className={styles.chartContainerFooter}>
