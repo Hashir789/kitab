@@ -1,4 +1,5 @@
 import React from "react";
+import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import styles from "./WhatIsKitaab.module.css";
 
 export default function WhatIsKitaabSection() {
@@ -26,15 +27,16 @@ export default function WhatIsKitaabSection() {
         </div>
 
         <div className={styles.right}>
-          <h2 id="what-is-kitaab-heading" className={styles.heading}>
-            What is <span className={styles.kitaabHighlight}>Kitaab</span>
-          </h2>
+
+          <BiSolidQuoteAltLeft aria-hidden="true" className={styles.quoteIconLeft} />
           <p>
-            Every action we take leaves a mark, whether good or bad. Most of them pass unnoticed, blending into ordinary days. But the moment you begin to record them, your perspective shifts. Patterns become clear. Choices become visible. And awareness becomes the first step toward growth.
+            Every day, you make choices, but most go unrecorded. Without tracking them, improvement becomes unclear.
           </p>
           <p>
-            Inspired by the concept of <em>Amaal Naama</em>, the Book of Deeds, Kitaab is a simple tracking app that brings this timeless idea into your daily life. It offers a private space for honest accountability, where every small good is valued and every mistake becomes an opportunity to reflect, correct, and improve.
+            Inspired by the concept of <em>Amaal Naama</em>, Book of Deeds, Kitaab is a personal deed tracking app that helps you track your deeds, reflect clearly, grow consistently, and improve every day.
           </p>
+          <div className={styles.introLabel}>— Introduction to Kitaab</div>
+          <BiSolidQuoteAltRight aria-hidden="true" className={styles.quoteIconRight} />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import styles from "./WhyKitaab.module.css";
 
 export default function WhyKitaabSection() {
@@ -10,21 +11,12 @@ export default function WhyKitaabSection() {
     >
       <div className={styles.inner}>
         <div className={styles.left}>
-          <h2 id="why-kitaab-heading" className={styles.heading}>
-            Why <span className={styles.kitaabHighlight}>Kitaab</span>
-          </h2>
+          <BiSolidQuoteAltLeft aria-hidden="true" className={styles.quoteIconLeft} />
           <p>
-            Track your daily Hasanaat (good deeds) and Sayyi&apos;at (bad deeds) in one meaningful place. Awareness of your actions is the first step toward real change.
+            With dedicated Hasanaat (good deeds) and Sayyi&apos;at (bad deeds) sections, Kitaab allows you to track all your daily deeds — beyond salah and routine worship. By recording both positive actions and shortcomings, you build awareness, reflect with honesty, and create a clear path toward steady self-improvement.
           </p>
-          <p>
-            Inspired by the concept mentioned in the Qur&apos;an, Kitaab reminds you that every action counts and is recorded.
-          </p>
-          <p>
-            Your deeds stay yours. No one can access your record without your permission, giving you a safe and private space to reflect honestly.
-          </p>
-          <p>
-            Small actions shape who you become. Reflect daily, improve consistently, and strive to increase your good deeds one step at a time.
-          </p>
+          <div className={styles.introLabel}>— Why Kitaab</div>
+          <BiSolidQuoteAltRight aria-hidden="true" className={styles.quoteIconRight} />
         </div>
 
         <div className={styles.right}>
