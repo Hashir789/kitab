@@ -171,37 +171,21 @@ export default function PrayerChartClient() {
   }, []);
 
   return (
-    <div
-      className={styles.chartContainer}
-      onMouseEnter={() => {
-        isPausedRef.current = true;
-        pausedAtMsRef.current = Date.now();
-      }}
-      onMouseLeave={() => {
-        if (pausedAtMsRef.current) {
-          const pausedForMs = Date.now() - pausedAtMsRef.current;
-          startTimeRef.current += pausedForMs;
-        }
-        pausedAtMsRef.current = null;
-        isPausedRef.current = false;
-      }}
-    >
-      <div className={styles.progressDotsContainer}>
-        <button
-          type="button"
-          onClick={() => handleSlideClick(0)}
-          className={`${styles.progressDot} ${currentSlide === 0 ? styles.progressDotActive : ''}`}
-          aria-label="View Hasanaat"
-          aria-pressed={currentSlide === 0}
-        />
-        <button
-          type="button"
-          onClick={() => handleSlideClick(1)}
-          className={`${styles.progressDot} ${currentSlide === 1 ? styles.progressDotActive : ''}`}
-          aria-label="View Sayyiaat"
-          aria-pressed={currentSlide === 1}
-        />
-      </div>
+      <div
+        className={styles.chartContainer}
+        onMouseEnter={() => {
+          isPausedRef.current = true;
+          pausedAtMsRef.current = Date.now();
+        }}
+        onMouseLeave={() => {
+          if (pausedAtMsRef.current) {
+            const pausedForMs = Date.now() - pausedAtMsRef.current;
+            startTimeRef.current += pausedForMs;
+          }
+          pausedAtMsRef.current = null;
+          isPausedRef.current = false;
+        }}
+      >
       <div className={styles.chartContainerFooter}>
         <div className={styles.namazDropdownWrapper}>
           <div 
@@ -266,6 +250,22 @@ export default function PrayerChartClient() {
               </div>
             </div>
           </div>
+        </div>
+        <div className={styles.progressDotsContainer}>
+          <button
+            type="button"
+            onClick={() => handleSlideClick(0)}
+            className={`${styles.progressDot} ${currentSlide === 0 ? styles.progressDotActive : ''}`}
+            aria-label="View Hasanaat"
+            aria-pressed={currentSlide === 0}
+          />
+          <button
+            type="button"
+            onClick={() => handleSlideClick(1)}
+            className={`${styles.progressDot} ${currentSlide === 1 ? styles.progressDotActive : ''}`}
+            aria-label="View Sayyiaat"
+            aria-pressed={currentSlide === 1}
+          />
         </div>
         <div
           className={styles.groupButtonContainer}
